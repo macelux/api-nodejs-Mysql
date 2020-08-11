@@ -43,6 +43,14 @@ exports.read_a_task = function(req, res) {
     });
 };
 
+exports.check_a_task = function(req, res) {
+    Task.getTaskByValue(req.body, function(err, task) {
+        if (err)
+            res.send(err);
+        res.json(task);
+    });
+};
+
 
 exports.update_a_task = function(req, res) {
     Task.updateById(req.params.taskId, new Task(req.body), function(err, task) {

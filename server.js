@@ -4,7 +4,7 @@
  port = process.env.PORT || 3000;
 
  // connect to database
- mc.connect();
+ //mc.connect();
 
  app.listen(port);
 
